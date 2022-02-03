@@ -98,4 +98,9 @@ export class StudentAddComponent implements OnInit {
     required: "Please enter your name.",
     "firstName": 'Please enter your name.',
   };
+
+  onBack(): void {
+    this.router.navigate(['/table']);
+  }
+
 }

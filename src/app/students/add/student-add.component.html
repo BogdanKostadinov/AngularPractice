@@ -38,8 +38,9 @@
       
     </form>
     <mat-card-actions>
+    <button mat-stroked-button color="primary" (click)="onBack()">Back</button>
     <button mat-raised-button color="primary" (click)="save()" [disabled]="!studentForm.valid">Save</button>
-      <button mat-stroked-button color="accent" (click)="populateTestData()">Test</button>
+    <button mat-stroked-button color="accent" (click)="populateTestData()">Test</button>
     </mat-card-actions>
 
   </mat-card>
