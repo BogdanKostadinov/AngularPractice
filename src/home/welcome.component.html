@@ -1,0 +1,51 @@
+﻿<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column" fxLayoutAlign="space-evenly center">
+  <div class="welcome" fxLayout="column" fxFlex="50" fxLayoutAlign="space-evenly center" >
+    <h1>Welcome!</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ante et ante euismod iaculis id et magna. Suspendisse ex lorem, sodales pretium tincidunt ut, feugiat et lorem. Donec quis tortor justo. Integer egestas rhoncus leo id ultrices. Integer ullamcorper posuere lobortis. Proin ac tempor eros, vitae iaculis leo. Nam nibh nunc, cursus nec sagittis a, rutrum et nulla. In nec fermentum libero. Fusce elit neque, tristique quis ligula quis, sollicitudin bibendum leo. Nam rutrum velit mi, ut tincidunt nibh rhoncus et. Proin blandit facilisis erat sed consequat. Aliquam posuere, ipsum sit amet molestie cursus, leo enim ullamcorper sapien, quis egestas lorem dolor a turpis. Sed tincidunt cursus leo in cursus.</p>
+     <p> Nunc sed elit ultrices, sagittis dui quis, gravida lorem. Sed pulvinar ante purus, a congue diam viverra mollis. Pellentesque in justo facilisis, egestas orci id, consequat diam. Etiam dapibus pellentesque dui. Pellentesque tempor ligula sit amet fermentum cursus. Vivamus eget ante facilisis, congue nunc vel, euismod orci. Nam nec ante faucibus ipsum tincidunt elementum sed sed odio.</p>
+  </div>
+  
+  <div class="welcome"  fxLayout="column" fxLayoutGap="40px" fxLayoutAlign="space-evenly center"  fxFlex="50">
+    <mat-card (click)='navigateTo("student-add")' class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>Add student</mat-card-title>
+        <mat-card-subtitle>You can add a new student through here!</mat-card-subtitle>
+        <img mat-card-md-image src="assets/images/add_student.png" >
+      </mat-card-title-group>
+    </mat-card>
+  
+    <mat-card (click)='navigateTo("student-list")' class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>Student list</mat-card-title>
+        <mat-card-subtitle>You can view all students through here!</mat-card-subtitle>
+        <img mat-card-md-image src="assets/images/student_list.png" >
+      </mat-card-title-group>
+    </mat-card>
+  </div>
+
+</div>
+
+
+<!-- <div class="welcome" fxLayout="column" fxFlex="50" fxLayoutAlign="space-evenly center" >
+  <h1>Welcome!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ante et ante euismod iaculis id et magna. Suspendisse ex lorem, sodales pretium tincidunt ut, feugiat et lorem. Donec quis tortor justo. Integer egestas rhoncus leo id ultrices. Integer ullamcorper posuere lobortis. Proin ac tempor eros, vitae iaculis leo. Nam nibh nunc, cursus nec sagittis a, rutrum et nulla. In nec fermentum libero. Fusce elit neque, tristique quis ligula quis, sollicitudin bibendum leo. Nam rutrum velit mi, ut tincidunt nibh rhoncus et. Proin blandit facilisis erat sed consequat. Aliquam posuere, ipsum sit amet molestie cursus, leo enim ullamcorper sapien, quis egestas lorem dolor a turpis. Sed tincidunt cursus leo in cursus.</p>
+   <p> Nunc sed elit ultrices, sagittis dui quis, gravida lorem. Sed pulvinar ante purus, a congue diam viverra mollis. Pellentesque in justo facilisis, egestas orci id, consequat diam. Etiam dapibus pellentesque dui. Pellentesque tempor ligula sit amet fermentum cursus. Vivamus eget ante facilisis, congue nunc vel, euismod orci. Nam nec ante faucibus ipsum tincidunt elementum sed sed odio.</p>
+</div>
+
+<div class="welcome"  fxLayout="column" fxLayoutGap="40px" fxLayoutAlign="space-evenly center"  fxFlex="50">
+  <mat-card (click)='navigateTo("student-add")' class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>Add student</mat-card-title>
+      <mat-card-subtitle>You can add a new student through here!</mat-card-subtitle>
+      <img mat-card-md-image src="assets/images/add_student.png" >
+    </mat-card-title-group>
+  </mat-card>
+
+  <mat-card (click)='navigateTo("student-list")' class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>Student list</mat-card-title>
+      <mat-card-subtitle>You can view all students through here!</mat-card-subtitle>
+      <img mat-card-md-image src="assets/images/student_list.png" >
+    </mat-card-title-group>
+  </mat-card>
+</div> -->

@@ -1,0 +1,45 @@
+
+  <mat-card class="mat-elevation-z0">
+    <mat-card-title >Create new student</mat-card-title>
+    <br>
+    
+    <form [formGroup]="studentForm">
+      
+      <div fxLayout="column" fxFlex="50" fxLayoutAlign="space-between" >
+        
+        <mat-form-field appearance="outline">
+          <mat-label>First name</mat-label>
+          <input matInput formControlName="firstName" placeholder="Name (required)"
+          [ngClass]="{'is-invalid': nameMessage }">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Surname</mat-label>
+          <input matInput  formControlName="surname" placeholder="Enter surname">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Age</mat-label>
+          <input type="number" matInput formControlName="age" placeholder="Enter your age">
+        </mat-form-field>
+        
+      </div>
+      
+      <div fxLayout="row" fxFlex="50" fxLayoutAlign="space-evenly start" >
+        <mat-form-field *ngIf="courses$ | async as courses">
+          <mat-label>Select course</mat-label>
+          <mat-select formControlName="courseId" (selectionChange)="changeClient($event.value)">
+            <mat-option *ngFor="let course of courses" [value]="course.id">
+              {{course.courseName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+    </form>
+    <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="save()" [disabled]="!studentForm.valid">Save</button>
+      <button mat-stroked-button color="accent" (click)="populateTestData()">Test</button>
+    </mat-card-actions>
+
+  </mat-card>

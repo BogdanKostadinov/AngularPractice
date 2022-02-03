@@ -1,0 +1,88 @@
+<mat-card class="mat-elevation-z0">
+  <mat-card-title >Edit student</mat-card-title>
+  <br>
+  
+  <form [formGroup]="studentForm">
+        
+    <div fxLayout="column" fxFlex="50" fxLayoutAlign="space-between" >
+
+      <mat-form-field appearance="outline">
+        <mat-label>First name</mat-label>
+        <input matInput formControlName="firstName" placeholder="Name (required)"
+        [ngClass]="{'is-invalid': nameMessage }">
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Surname</mat-label>
+        <input matInput  formControlName="surname" placeholder="Enter surname">
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" placeholder="Enter your age">
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxFlex="50" fxLayoutAlign="space-evenly center" >
+      <mat-form-field *ngIf="courses$ | async as courses">
+        <mat-label>Select course</mat-label>
+        <mat-select formControlName="courseId" (selectionChange)="changeClient($event.value)">
+          <mat-option *ngFor="let course of courses" [value]="course.id">
+            {{course.courseName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- WIP will be grades eventually -->
+      <mat-form-field *ngIf="courses$ | async as courses">
+        <mat-label>Select subject</mat-label>
+        <mat-select >
+          <mat-option >
+            Work in progress
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </form>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="updateStudent()" [disabled]="!studentForm.valid">Save</button>
+    <button mat-stroked-button color="accent" (click)="populateTestData()">Test</button>
+  </mat-card-actions>
+
+  <mat-card-footer>
+    <!-- <div class="card-footer text-muted">
+      Dirty: {{studentForm.dirty}}<br>
+      Touched: {{studentForm.touched}}<br>
+      Valid: {{studentForm.valid}}<br>
+      Value: {{studentForm.value | json}}<br>
+    </div> -->
+  </mat-card-footer>
+</mat-card>
+
+
+<!-- <div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title text-center">Edit student</h5>
+
+
+      <button mat-raised-button color="primary" (click)="updateStudent()" [disabled]="!studentForm.valid">
+        Save
+      </button>
+      <button mat-raised-button color="accent" (click)="populateTestData()">
+        Test Data
+      </button>
+
+    </div>
+    <div class="card-footer text-muted">
+      Dirty: {{studentForm.dirty}}<br>
+      Touched: {{studentForm.touched}}<br>
+      Valid: {{studentForm.valid}}<br>
+      Value: {{studentForm.value | json}}<br>
+    </div>
+  </div> -->
